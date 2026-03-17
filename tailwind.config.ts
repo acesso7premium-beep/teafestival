@@ -57,6 +57,8 @@ export default {
           charcoal: "hsl(var(--festival-charcoal))",
           dark: "hsl(var(--festival-dark))",
           warm: "hsl(var(--festival-warm-bg))",
+          red: "hsl(var(--festival-red))",
+          green: "hsl(var(--festival-green))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

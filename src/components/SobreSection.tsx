@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
+import { Puzzle } from "lucide-react";
 
 const SobreSection = () => (
-  <section id="sobre" className="py-20 md:py-28">
+  <section id="sobre" className="py-20 md:py-28" aria-labelledby="sobre-title">
     <div className="container mx-auto px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -12,10 +12,10 @@ const SobreSection = () => (
         className="max-w-3xl mx-auto text-center"
       >
         <div className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-1.5 text-sm font-semibold mb-6">
-          <Heart className="w-4 h-4" />
+          <Puzzle className="w-4 h-4" aria-hidden="true" />
           Sobre o Evento
         </div>
-        <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-6">
+        <h2 id="sobre-title" className="font-display font-bold text-3xl md:text-4xl text-foreground mb-6">
           Um palco para quem sempre foi protagonista
         </h2>
         <p className="text-muted-foreground text-lg leading-relaxed mb-4">
@@ -28,6 +28,14 @@ const SobreSection = () => (
           Mais do que um festival, é um encontro de famílias, profissionais e artistas que acreditam em um
           mundo onde cada voz importa e cada luz brilha.
         </p>
+
+        {/* Decorative puzzle divider */}
+        <div className="flex justify-center gap-2 mt-8" aria-hidden="true">
+          <div className="w-3 h-3 rounded-sm bg-primary rotate-45" />
+          <div className="w-3 h-3 rounded-sm bg-accent rotate-45" />
+          <div className="w-3 h-3 rounded-sm bg-festival-red rotate-45" />
+          <div className="w-3 h-3 rounded-sm bg-festival-green rotate-45" />
+        </div>
       </motion.div>
     </div>
   </section>

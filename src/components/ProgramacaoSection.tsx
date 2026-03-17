@@ -81,7 +81,7 @@ const TimelineEvent = ({ item, index }: { item: EventItem; index: number }) => (
 );
 
 const ProgramacaoSection = () => (
-  <section id="programacao" className="py-20 md:py-28 bg-secondary/50">
+  <section id="programacao" className="py-20 md:py-28 bg-secondary/50 puzzle-pattern" aria-labelledby="programacao-title">
     <div className="container mx-auto px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -90,7 +90,7 @@ const ProgramacaoSection = () => (
         transition={{ duration: 0.7 }}
         className="text-center mb-12"
       >
-        <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-3">
+        <h2 id="programacao-title" className="font-display font-bold text-3xl md:text-4xl text-foreground mb-3">
           Programação
         </h2>
         <p className="text-muted-foreground text-lg max-w-xl mx-auto">
@@ -104,9 +104,9 @@ const ProgramacaoSection = () => (
             <TabsTrigger
               key={tab.value}
               value={tab.value}
-              className="flex-1 min-w-[120px] gap-2 rounded-lg data-[state=active]:bg-card data-[state=active]:shadow-sm py-2.5"
+              className="flex-1 min-w-[120px] gap-2 rounded-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm py-2.5"
             >
-              <tab.icon className="w-4 h-4" />
+              <tab.icon className="w-4 h-4" aria-hidden="true" />
               <span className="hidden sm:inline">{tab.label}</span>
             </TabsTrigger>
           ))}
