@@ -56,10 +56,10 @@ const TimelineEvent = ({ item, index }: { item: EventItem; index: number }) => (
     transition={{ duration: 0.3, delay: index * 0.04 }}
   >
     {item.description ? (
-      <AccordionItem value={`${item.time}-${index}`} className="border-b border-border">
+      <AccordionItem value={`${item.time}-${index}`} className="border-b border-[hsl(210_60%_50%/0.2)]">
         <AccordionTrigger className="hover:no-underline py-5 px-2">
           <div className="flex items-center gap-4 text-left">
-            <span className="text-sm font-mono font-semibold text-primary whitespace-nowrap min-w-[80px]">
+            <span className="text-sm font-mono font-bold text-secondary whitespace-nowrap min-w-[80px]">
               {item.time}
             </span>
             <span className="font-semibold text-foreground text-base">{item.title}</span>
@@ -70,8 +70,8 @@ const TimelineEvent = ({ item, index }: { item: EventItem; index: number }) => (
         </AccordionContent>
       </AccordionItem>
     ) : (
-      <div className="flex items-center gap-4 py-5 px-2 border-b border-border">
-        <span className="text-sm font-mono font-semibold text-primary whitespace-nowrap min-w-[80px]">
+      <div className="flex items-center gap-4 py-5 px-2 border-b border-[hsl(210_60%_50%/0.2)]">
+        <span className="text-sm font-mono font-bold text-secondary whitespace-nowrap min-w-[80px]">
           {item.time}
         </span>
         <span className="font-semibold text-foreground text-base">{item.title}</span>
@@ -81,7 +81,7 @@ const TimelineEvent = ({ item, index }: { item: EventItem; index: number }) => (
 );
 
 const ProgramacaoSection = () => (
-  <section id="programacao" className="py-24 md:py-32 bg-card" aria-labelledby="programacao-title">
+  <section id="programacao" className="py-24 md:py-32 bg-background puzzle-pattern" aria-labelledby="programacao-title">
     <div className="container mx-auto px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -90,7 +90,7 @@ const ProgramacaoSection = () => (
         transition={{ duration: 0.5 }}
         className="text-center mb-14"
       >
-        <h2 id="programacao-title" className="font-display font-bold text-3xl md:text-4xl text-foreground mb-4">
+        <h2 id="programacao-title" className="font-display font-black text-3xl md:text-4xl text-foreground mb-4">
           Programação
         </h2>
         <p className="text-muted-foreground text-lg max-w-xl mx-auto">
@@ -99,12 +99,12 @@ const ProgramacaoSection = () => (
       </motion.div>
 
       <Tabs defaultValue="palco" className="max-w-3xl mx-auto">
-        <TabsList className="w-full flex flex-wrap h-auto gap-1 bg-muted p-2 rounded-xl mb-10">
+        <TabsList className="w-full flex flex-wrap h-auto gap-1 bg-[hsl(210_100%_15%/0.6)] p-2 rounded-xl mb-10 border border-[hsl(210_60%_50%/0.2)]">
           {tabs.map((tab) => (
             <TabsTrigger
               key={tab.value}
               value={tab.value}
-              className="flex-1 min-w-[120px] gap-2 rounded-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm py-3 text-sm font-semibold"
+              className="flex-1 min-w-[120px] gap-2 rounded-lg data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground data-[state=active]:shadow-sm py-3 text-sm font-semibold text-muted-foreground"
             >
               <tab.icon className="w-4 h-4" aria-hidden="true" />
               <span className="hidden sm:inline">{tab.label}</span>
@@ -114,7 +114,7 @@ const ProgramacaoSection = () => (
 
         {tabs.map((tab) => (
           <TabsContent key={tab.value} value={tab.value}>
-            <div className="bg-background rounded-2xl p-6 md:p-8 shadow-sm border border-border">
+            <div className="bg-[hsl(210_100%_15%/0.5)] backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-[hsl(210_60%_50%/0.2)]">
               <Accordion type="multiple">
                 {tab.events.map((event, i) => (
                   <TimelineEvent key={`${event.time}-${i}`} item={event} index={i} />
