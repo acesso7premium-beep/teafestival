@@ -34,7 +34,7 @@ const DestaqueSection = () => (
 
             <p className="text-muted-foreground text-lg leading-relaxed mb-4">
               Aos 14 anos, João Pedro é piloto de kart e autista. Número 44, ele acelera nas pistas provando
-              que limites existem apenas para serem ultrapassados. Sua presença no Festival Luz & Voz
+              que limites existem apenas para serem ultrapassados. Sua presença no TEA Festival Luz & Voz
               é um testemunho de velocidade, determinação e protagonismo.
             </p>
 

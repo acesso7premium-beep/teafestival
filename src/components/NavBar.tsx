@@ -21,7 +21,7 @@ const NavBar = () => {
 
       <header className="fixed top-0 left-0 right-0 z-50 glass" role="banner">
         <div className="container mx-auto flex items-center justify-between h-16 px-4">
-          <a href="#" className="flex items-center gap-3" aria-label="Início - Festival Luz & Voz">
+          <a href="#" className="flex items-center gap-3" aria-label="Início - TEA Festival Luz & Voz">
             <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center" aria-hidden="true">
               <span className="text-secondary-foreground font-black text-lg">🧩</span>
             </div>
