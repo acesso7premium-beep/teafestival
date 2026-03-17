@@ -18,7 +18,7 @@ const palcoPrincipal: EventItem[] = [
   { time: "16:20", title: "Intervalo Musical" },
   { time: "17:00", title: "Ciclo de Palestras", description: "Inclusão e Autismo na Vida Adulta — com especialistas e ativistas da causa." },
   { time: "17:45", title: "Palestra: Direitos e Acessibilidade", description: "Debate sobre políticas públicas e direitos da pessoa autista." },
-  { time: "18:00", title: "Desfile Luz & Voz", description: "O grande momento de protagonismo: mães e filhos desfilam celebrando a vida, a luta e o amor." },
+  { time: "18:00", title: "Desfile TEA Festival Luz & Voz", description: "O grande momento de protagonismo: mães e filhos desfilam celebrando a vida, a luta e o amor." },
   { time: "18:45", title: "Show de Encerramento" },
   { time: "19:00", title: "Encerramento Oficial" },
 ];
