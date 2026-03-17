@@ -11,7 +11,7 @@ interface EventItem {
 
 const palcoPrincipal: EventItem[] = [
   { time: "14:00", title: "Abertura dos Portões" },
-  { time: "14:20", title: "Abertura Oficial", description: "Fala da Presidência da { time: "14:20", title: "Abertura Oficial", description: "Fala da Presidência da Associação Colo de Mãe e autoridades convidadas." }, convidadas." },
+  { time: "14:20", title: "Abertura Oficial", description: "Fala da Presidência da Associação Colo de Mãe e autoridades convidadas." },
   { time: "15:00", title: "Ballet Inclusivo", description: "Apresentação do grupo de ballet que une crianças neurodivergentes e neurotípicas em coreografias emocionantes." },
   { time: "15:30", title: "Teatro Sensorial", description: "Peça adaptada com estímulos visuais e sonoros cuidadosamente planejados para o público autista." },
   { time: "16:00", title: "Musicoterapia ao Vivo", description: "Sessão interativa de musicoterapia com instrumentos acessíveis." },
