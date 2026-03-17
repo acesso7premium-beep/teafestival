@@ -111,7 +111,7 @@ const SplashScreen = ({ onFinish }: {onFinish: () => void;}) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.0 }}
-            className="text-muted-foreground text-base md:text-lg mb-10 max-w-md mx-auto">
+            className="text-muted-foreground text-base md:text-lg mb-10 max-w-md mx-auto text-center">
             
               25 de Abril, 2026 • Teatro Municipal de Cotia
             </motion.p>
