@@ -65,8 +65,8 @@ const HeroSection = () => {
           </div>
 
           <h1 className="font-display font-black text-4xl sm:text-5xl md:text-7xl leading-tight mb-4 text-foreground">
-            <span className="text-foreground">TEA</span>{" "}
-            <span className="text-gradient-autism">Festival Luz & Voz</span>
+            <span className="text-foreground">TEA Festival</span>{" "}
+            <span className="text-gradient-autism">Luz & Voz</span>
           </h1>
           <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary">
             Associação Colo de Mãe
