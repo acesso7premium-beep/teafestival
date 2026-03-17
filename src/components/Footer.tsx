@@ -10,7 +10,7 @@ const Footer = () => (
             <span className="font-display font-bold text-lg text-foreground">Luz & Voz</span>
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-            Festival Luz & Voz – Colo de Mãe. Arte, inclusão e protagonismo atípico.
+            Festival Luz & Voz – Associação Colo de Mãe. Arte, inclusão e protagonismo atípico.
           </p>
           <p className="text-xs text-muted-foreground/60 leading-relaxed">
             Associação Colo de Mãe<br />

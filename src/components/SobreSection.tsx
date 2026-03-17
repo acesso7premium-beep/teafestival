@@ -20,7 +20,7 @@ const SobreSection = () => (
         </h2>
 
         <p className="text-card-foreground/70 text-lg leading-relaxed mb-6">
-          O <strong className="text-card-foreground">Festival Luz & Voz – Colo de Mãe</strong> é uma realização da{" "}
+          O <strong className="text-card-foreground">Festival Luz & Voz – Associação Colo de Mãe</strong> é uma realização da{" "}
           <strong className="text-card-foreground">Associação Colo de Mãe</strong>, em parceria com a Secretaria de
           Cultura e Turismo e a Prefeitura de Cotia. O evento celebra a arte, a inclusão e o protagonismo
           atípico, trazendo apresentações artísticas, palestras, experiências sensoriais e muita acolhida.
