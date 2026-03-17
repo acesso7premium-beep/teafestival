@@ -25,7 +25,7 @@ const NavBar = () => {
             <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center" aria-hidden="true">
               <span className="text-secondary-foreground font-black text-lg">🧩</span>
             </div>
-            <span className="font-display font-bold text-lg text-foreground tracking-tight">Luz & Voz</span>
+            <span className="font-display font-bold text-lg text-foreground tracking-tight">TEA Festival Luz & Voz</span>
           </a>
 
           <nav className="hidden md:flex items-center gap-8" aria-label="Navegação principal">
