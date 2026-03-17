@@ -69,7 +69,7 @@ const HeroSection = () => {
             <span className="text-gradient-autism">Luz & Voz</span>
           </h1>
           <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-6">
-            Colo de Mãe
+            Associação Colo de Mãe
           </p>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
