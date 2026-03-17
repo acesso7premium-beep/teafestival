@@ -50,47 +50,47 @@ const tabs = [
 
 const TimelineEvent = ({ item, index }: { item: EventItem; index: number }) => (
   <motion.div
-    initial={{ opacity: 0, x: -20 }}
+    initial={{ opacity: 0, x: -10 }}
     whileInView={{ opacity: 1, x: 0 }}
     viewport={{ once: true }}
-    transition={{ duration: 0.4, delay: index * 0.05 }}
+    transition={{ duration: 0.3, delay: index * 0.04 }}
   >
     {item.description ? (
       <AccordionItem value={`${item.time}-${index}`} className="border-b border-border">
-        <AccordionTrigger className="hover:no-underline py-4">
+        <AccordionTrigger className="hover:no-underline py-5 px-2">
           <div className="flex items-center gap-4 text-left">
-            <span className="text-sm font-mono font-semibold text-primary whitespace-nowrap min-w-[70px]">
+            <span className="text-sm font-mono font-semibold text-primary whitespace-nowrap min-w-[80px]">
               {item.time}
             </span>
-            <span className="font-medium text-foreground">{item.title}</span>
+            <span className="font-semibold text-foreground text-base">{item.title}</span>
           </div>
         </AccordionTrigger>
-        <AccordionContent>
-          <p className="text-muted-foreground pl-[86px]">{item.description}</p>
+        <AccordionContent className="px-2">
+          <p className="text-muted-foreground pl-[96px] text-base leading-relaxed pb-2">{item.description}</p>
         </AccordionContent>
       </AccordionItem>
     ) : (
-      <div className="flex items-center gap-4 py-4 border-b border-border">
-        <span className="text-sm font-mono font-semibold text-primary whitespace-nowrap min-w-[70px]">
+      <div className="flex items-center gap-4 py-5 px-2 border-b border-border">
+        <span className="text-sm font-mono font-semibold text-primary whitespace-nowrap min-w-[80px]">
           {item.time}
         </span>
-        <span className="font-medium text-foreground">{item.title}</span>
+        <span className="font-semibold text-foreground text-base">{item.title}</span>
       </div>
     )}
   </motion.div>
 );
 
 const ProgramacaoSection = () => (
-  <section id="programacao" className="py-20 md:py-28 bg-secondary/50 puzzle-pattern" aria-labelledby="programacao-title">
+  <section id="programacao" className="py-24 md:py-32 bg-card" aria-labelledby="programacao-title">
     <div className="container mx-auto px-4">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.7 }}
-        className="text-center mb-12"
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.5 }}
+        className="text-center mb-14"
       >
-        <h2 id="programacao-title" className="font-display font-bold text-3xl md:text-4xl text-foreground mb-3">
+        <h2 id="programacao-title" className="font-display font-bold text-3xl md:text-4xl text-foreground mb-4">
           Programação
         </h2>
         <p className="text-muted-foreground text-lg max-w-xl mx-auto">
@@ -99,12 +99,12 @@ const ProgramacaoSection = () => (
       </motion.div>
 
       <Tabs defaultValue="palco" className="max-w-3xl mx-auto">
-        <TabsList className="w-full flex flex-wrap h-auto gap-1 bg-muted p-1.5 rounded-xl mb-8">
+        <TabsList className="w-full flex flex-wrap h-auto gap-1 bg-muted p-2 rounded-xl mb-10">
           {tabs.map((tab) => (
             <TabsTrigger
               key={tab.value}
               value={tab.value}
-              className="flex-1 min-w-[120px] gap-2 rounded-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm py-2.5"
+              className="flex-1 min-w-[120px] gap-2 rounded-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm py-3 text-sm font-semibold"
             >
               <tab.icon className="w-4 h-4" aria-hidden="true" />
               <span className="hidden sm:inline">{tab.label}</span>
@@ -114,7 +114,7 @@ const ProgramacaoSection = () => (
 
         {tabs.map((tab) => (
           <TabsContent key={tab.value} value={tab.value}>
-            <div className="bg-card rounded-2xl p-6 shadow-sm border border-border">
+            <div className="bg-background rounded-2xl p-6 md:p-8 shadow-sm border border-border">
               <Accordion type="multiple">
                 {tab.events.map((event, i) => (
                   <TimelineEvent key={`${event.time}-${i}`} item={event} index={i} />
