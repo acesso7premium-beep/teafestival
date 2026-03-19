@@ -125,14 +125,31 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="text-center">
+          className="flex flex-wrap justify-center items-center gap-4">
           
+          <Button
+            size="lg"
+            asChild
+            className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90 text-base font-bold px-8 py-4 shadow-lg shadow-accent/20">
+            <a href="https://acolodemae.lovable.app" target="_blank" rel="noopener noreferrer">
+              Colo de Mãe
+            </a>
+          </Button>
+
           <Button
             size="lg"
             className="rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/90 text-base font-bold px-10 py-4 shadow-lg shadow-secondary/20"
             onClick={() => document.getElementById("programacao")?.scrollIntoView({ behavior: "smooth" })}>
-            
             Ver Programação
+          </Button>
+
+          <Button
+            size="lg"
+            asChild
+            className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 text-base font-bold px-8 py-4 shadow-lg shadow-primary/20">
+            <a href="https://movimentopcd.lovable.app/" target="_blank" rel="noopener noreferrer">
+              Movimento PcD
+            </a>
           </Button>
         </motion.div>
       </div>
