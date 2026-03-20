@@ -111,12 +111,12 @@ const HeroSection = () => {
           {countdownItems.map((item) =>
           <div
             key={item.label}
-            className="bg-[hsl(210_100%_30%/0.5)] backdrop-blur-sm rounded-xl p-4 min-w-[72px] border border-[hsl(210_60%_50%/0.2)] text-center">
+            className="bg-[hsl(210_100%_30%/0.5)] backdrop-blur-sm rounded-2xl p-5 sm:p-6 min-w-[90px] sm:min-w-[110px] border border-[hsl(210_60%_50%/0.2)] text-center">
             
-              <p className="font-display font-black text-2xl md:text-3xl text-secondary" aria-label={`${item.value} ${item.label}`}>
-                {String(item.value).padStart(2, "0")}
-              </p>
-              <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">{item.label}</p>
+               <p className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-secondary" aria-label={`${item.value} ${item.label}`}>
+                 {String(item.value).padStart(2, "0")}
+               </p>
+               <p className="text-sm text-muted-foreground uppercase tracking-wider mt-1">{item.label}</p>
             </div>
           )}
         </motion.div>
