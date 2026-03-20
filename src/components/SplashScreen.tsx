@@ -141,18 +141,38 @@ const SplashScreen = ({ onFinish }: {onFinish: () => void;}) => {
             )}
             </motion.div>
 
-            {/* Enter button */}
-            <motion.button
+            {/* Buttons */}
+            <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.8 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={handleEnter}
-            className="rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/90 text-base font-bold px-10 py-4 shadow-lg shadow-secondary/20 transition-colors">
-            
-              Entrar no Site
-            </motion.button>
+            className="flex flex-wrap justify-center items-center gap-4">
+              <motion.a
+                href="https://acolodemae.lovable.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="rounded-full bg-accent text-accent-foreground text-base font-bold px-8 py-4 shadow-lg shadow-accent/20 transition-colors hover:bg-accent/90">
+                Colo de Mãe
+              </motion.a>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleEnter}
+                className="rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/90 text-base font-bold px-10 py-4 shadow-lg shadow-secondary/20 transition-colors">
+                Entrar no Site
+              </motion.button>
+              <motion.a
+                href="https://movimentopcd.lovable.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="rounded-full bg-primary text-primary-foreground text-base font-bold px-8 py-4 shadow-lg shadow-primary/20 transition-colors hover:bg-primary/90">
+                Movimento PcD
+              </motion.a>
+            </motion.div>
           </motion.div>
         </motion.div>
       }
