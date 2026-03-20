@@ -5,6 +5,7 @@ import SobreSection from "@/components/SobreSection";
 import DestaqueSection from "@/components/DestaqueSection";
 import ProgramacaoSection from "@/components/ProgramacaoSection";
 import AtracoesSection from "@/components/AtracoesSection";
+import ParceirosSection from "@/components/ParceirosSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SplashScreen from "@/components/SplashScreen";
@@ -21,6 +22,7 @@ const Index = () => {
       <DestaqueSection />
       <ProgramacaoSection />
       <AtracoesSection />
+      <ParceirosSection />
       <Footer />
       <WhatsAppButton />
     </div>
