@@ -98,14 +98,14 @@ const SplashScreen = ({ onFinish }: {onFinish: () => void;}) => {
               <span className="text-gradient-autism">Luz & Voz</span>
             </motion.h1>
 
-            <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            className="text-xl sm:text-2xl font-bold text-secondary mb-2 text-center">Associação Colo de Mãe
+            
 
 
-          </motion.p>
+
+
+
+
+          
 
             <motion.p
             initial={{ opacity: 0 }}
