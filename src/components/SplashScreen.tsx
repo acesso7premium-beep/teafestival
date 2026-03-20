@@ -131,12 +131,12 @@ const SplashScreen = ({ onFinish }: {onFinish: () => void;}) => {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.3 + i * 0.1, type: "spring", stiffness: 200 }}
-              className="bg-primary/30 backdrop-blur-sm rounded-2xl p-4 sm:p-5 min-w-[70px] sm:min-w-[90px] border border-primary/20">
+               className="bg-primary/30 backdrop-blur-sm rounded-2xl p-5 sm:p-7 min-w-[90px] sm:min-w-[120px] border border-primary/20">
               
-                  <p className="font-display font-black text-3xl sm:text-4xl text-secondary">
-                    {String(item.value).padStart(2, "0")}
-                  </p>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">{item.label}</p>
+                   <p className="font-display font-black text-4xl sm:text-5xl text-secondary">
+                     {String(item.value).padStart(2, "0")}
+                   </p>
+                   <p className="text-sm text-muted-foreground uppercase tracking-wider mt-1">{item.label}</p>
                 </motion.div>
             )}
             </motion.div>
