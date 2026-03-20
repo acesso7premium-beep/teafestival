@@ -68,9 +68,9 @@ const HeroSection = () => {
             <span className="text-foreground">TEA Festival </span>
             <span className="text-gradient-autism">Luz & Voz</span>
           </h1>
-          <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary text-center">
-            Associação Colo de Mãe
-          </p>
+          
+
+          
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed text-center">
             Arte, inclusão e protagonismo no palco. Uma celebração da comunidade autista e suas famílias.
@@ -132,7 +132,7 @@ const HeroSection = () => {
             asChild
             className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90 text-base font-bold px-8 py-4 shadow-lg shadow-accent/20">
             <a href="https://acolodemae.lovable.app" target="_blank" rel="noopener noreferrer">
-              Colo de Mãe
+              Associação Colo de Mãe
             </a>
           </Button>
 
