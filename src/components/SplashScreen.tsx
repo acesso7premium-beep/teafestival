@@ -153,7 +153,7 @@ const SplashScreen = ({ onFinish }: {onFinish: () => void;}) => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="rounded-full bg-accent text-accent-foreground text-base font-bold px-8 py-4 shadow-lg shadow-accent/20 transition-colors hover:bg-accent/90">
+              className="rounded-full bg-festival-green text-white text-base font-bold px-8 py-4 shadow-lg shadow-festival-green/20 transition-colors hover:bg-festival-green/90">
                 Associação Colo de Mãe
               </motion.a>
               <motion.button
