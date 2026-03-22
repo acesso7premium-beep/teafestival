@@ -130,7 +130,7 @@ const HeroSection = () => {
           <Button
             size="lg"
             asChild
-            className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90 text-base font-bold px-8 py-4 shadow-lg shadow-accent/20">
+            className="rounded-full bg-festival-green text-white hover:bg-festival-green/90 text-base font-bold px-8 py-4 shadow-lg shadow-festival-green/20">
             <a href="https://acolodemae.lovable.app" target="_blank" rel="noopener noreferrer">
               Associação Colo de Mãe
             </a>
