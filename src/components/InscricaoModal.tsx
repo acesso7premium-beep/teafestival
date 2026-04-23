@@ -47,23 +47,49 @@ const InscricaoModal = () => {
       return;
     }
 
-    // Gerar código de inscrição único
-    const codigo = `TEA-${Date.now()}-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
-    setCodigoInscrição(codigo);
+    try {
+      // Chamar API para criar inscrição
+      const response = await fetch("/api/inscricoes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nome: formData.nome,
+          email: formData.email,
+          whatsapp: formData.whatsapp,
+          eventos: eventosSelect
+        })
+      });
 
-    // Aqui será feita requisição para backend quando implementado
-    // await fetch('/api/inscricoes', { method: 'POST', body: JSON.stringify({ ...formData, eventos: eventosSelect }) })
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.detail || "Erro na inscrição");
+      }
 
-    setStep("confirmacao");
+      const data = await response.json();
+      setCodigoInscrição(data.codigo_referral);
+      setStep("confirmacao");
+    } catch (error) {
+      alert(`Erro: ${error instanceof Error ? error.message : "Falha na inscrição"}`);
+    }
   };
 
-  const handleCompartilhar = () => {
+  const handleCompartilhar = async () => {
     const eventosSelecionados = EVENTOS
       .filter(e => eventosSelect.includes(e.id))
       .map(e => `${e.hora} - ${e.titulo}`)
       .join("\n");
 
     const texto = `🧩 TEA Festival Luz & Voz 🧩\n\nMe inscrevi nos eventos:\n${eventosSelecionados}\n\nVem com a gente! 🎭✨\n\nSeu código: ${codigoInscrição}\n\n${window.location.href}`;
+
+    // Registrar compartilhamento no backend
+    try {
+      await fetch(`/api/compartilhamentos/${codigoInscrição}?origem=whatsapp`, {
+        method: "POST"
+      });
+    } catch (error) {
+      console.error("Erro ao registrar compartilhamento:", error);
+    }
+
     window.open(`https://wa.me/?text=${encodeURIComponent(texto)}`, '_blank');
   };
 
