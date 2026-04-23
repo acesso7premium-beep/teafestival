@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import create_engine, Column, String, Integer, DateTime, Boolean
 from sqlalchemy.ext.declarative import declarative_base
@@ -80,7 +80,7 @@ app.add_middleware(
 def gerar_codigo_referral():
     return f"TEA-{int(datetime.now().timestamp())}-{str(uuid.uuid4())[:8].upper()}"
 
-def get_db():
+def get_db() -> Session:
     db = SessionLocal()
     try:
         yield db
@@ -93,7 +93,7 @@ async def root():
     return {"message": "TEA Festival API", "version": "1.0.0"}
 
 @app.post("/api/inscricoes", response_model=InscricaoResponse)
-async def criar_inscricao(inscricao: InscricaoCreate, db: Session = next(get_db())):
+async def criar_inscricao(inscricao: InscricaoCreate, db: Session = Depends(get_db)):
     """Cria nova inscrição para o festival"""
 
     # Verificar se email já existe
@@ -129,7 +129,7 @@ async def criar_inscricao(inscricao: InscricaoCreate, db: Session = next(get_db(
     )
 
 @app.get("/api/inscricoes/{codigo_referral}", response_model=InscricaoResponse)
-async def obter_inscricao(codigo_referral: str, db: Session = next(get_db())):
+async def obter_inscricao(codigo_referral: str, db: Session = Depends(get_db)):
     """Obtém detalhes da inscrição pelo código referral"""
 
     inscricao = db.query(Inscricao).filter(Inscricao.codigo_referral == codigo_referral).first()
@@ -148,7 +148,7 @@ async def obter_inscricao(codigo_referral: str, db: Session = next(get_db())):
     )
 
 @app.post("/api/compartilhamentos/{codigo_referral}")
-async def registrar_compartilhamento(codigo_referral: str, origem: str = "whatsapp", db: Session = next(get_db())):
+async def registrar_compartilhamento(codigo_referral: str, origem: str = "whatsapp", db: Session = Depends(get_db)):
     """Registra um compartilhamento e incrementa o contador"""
 
     inscricao = db.query(Inscricao).filter(Inscricao.codigo_referral == codigo_referral).first()
@@ -169,7 +169,7 @@ async def registrar_compartilhamento(codigo_referral: str, origem: str = "whatsa
     return {"status": "sucesso", "compartilhamentos_total": inscricao.compartilhamentos}
 
 @app.get("/api/estatisticas", response_model=EstatisticasResponse)
-async def obter_estatisticas(db: Session = next(get_db())):
+async def obter_estatisticas(db: Session = Depends(get_db)):
     """Retorna estatísticas do festival"""
 
     total_inscricoes = db.query(Inscricao).count()
