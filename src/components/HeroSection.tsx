@@ -126,30 +126,22 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
           className="flex flex-wrap justify-center items-center gap-4">
-          
-          <Button
-            size="lg"
-            asChild
-            className="rounded-full bg-festival-green text-white hover:bg-festival-green/90 text-base font-bold px-8 py-4 shadow-lg shadow-festival-green/20">
-            <a href="https://acolodemae.lovable.app" target="_blank" rel="noopener noreferrer">
-              Associação Colo de Mãe
-            </a>
-          </Button>
 
           <Button
             size="lg"
-            className="rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/90 text-base font-bold px-10 py-4 shadow-lg shadow-secondary/20"
+            className="rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/90 text-lg font-bold px-16 py-6 shadow-lg shadow-secondary/20"
             onClick={() => document.getElementById("programacao")?.scrollIntoView({ behavior: "smooth" })}>
             Ver Programação
           </Button>
 
           <Button
             size="lg"
-            asChild
-            className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 text-base font-bold px-8 py-4 shadow-lg shadow-primary/20">
-            <a href="https://movimentopcd.lovable.app/" target="_blank" rel="noopener noreferrer">
-              Movimento PcD
-            </a>
+            className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 text-base font-bold px-8 py-4 shadow-lg shadow-primary/20"
+            onClick={() => {
+              const text = `🧩 TEA Festival Luz & Voz 🧩\n\nAcontece em 25 de Abril, 2026\nTeatro Municipal de Cotia\nA partir das 14h\n\n✨ Arte, inclusão e protagonismo autista\n\n${window.location.href}`;
+              window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+            }}>
+            Compartilhar o Evento
           </Button>
         </motion.div>
       </div>
