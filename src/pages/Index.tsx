@@ -9,6 +9,7 @@ import ParceirosSection from "@/components/ParceirosSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SplashScreen from "@/components/SplashScreen";
+import InscricaoModal from "@/components/InscricaoModal";
 
 const Index = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -18,6 +19,7 @@ const Index = () => {
       {showSplash && <SplashScreen onFinish={() => setShowSplash(false)} />}
       <NavBar />
       <HeroSection />
+      <InscricaoModal />
       <SobreSection />
       <DestaqueSection />
       <ProgramacaoSection />

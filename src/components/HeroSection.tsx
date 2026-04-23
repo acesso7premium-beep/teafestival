@@ -138,10 +138,10 @@ const HeroSection = () => {
             size="lg"
             className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 text-base font-bold px-8 py-4 shadow-lg shadow-primary/20"
             onClick={() => {
-              const text = `🧩 TEA Festival Luz & Voz 🧩\n\nAcontece em 25 de Abril, 2026\nTeatro Municipal de Cotia\nA partir das 14h\n\n✨ Arte, inclusão e protagonismo autista\n\n${window.location.href}`;
-              window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+              const modal = document.getElementById('inscricao-modal');
+              if (modal) modal.classList.remove('hidden');
             }}>
-            Compartilhar o Evento
+            Participar
           </Button>
         </motion.div>
       </div>
