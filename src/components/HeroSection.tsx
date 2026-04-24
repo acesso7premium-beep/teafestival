@@ -129,14 +129,14 @@ const HeroSection = () => {
 
           <Button
             size="lg"
-            className="rounded-full bg-green-600 text-white hover:bg-green-700 text-lg font-bold px-16 py-6 shadow-lg shadow-green-600/20"
+            className="rounded-full bg-green-600 text-white hover:bg-green-700 text-lg font-bold px-10 py-3 shadow-lg shadow-green-600/20"
             onClick={() => document.getElementById("programacao")?.scrollIntoView({ behavior: "smooth" })}>
             Ver Programação
           </Button>
 
           <Button
             size="lg"
-            className="rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/90 text-lg font-bold px-16 py-6 shadow-lg shadow-secondary/20"
+            className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 text-lg font-bold px-10 py-3 shadow-lg shadow-primary/20"
             onClick={() => {
               const modal = document.getElementById('inscricao-modal');
               if (modal) modal.classList.remove('hidden');
